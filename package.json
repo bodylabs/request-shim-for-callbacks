@@ -1,7 +1,7 @@
 {
   "name": "request-shim-for-callbacks",
   "description": "Wrap request's idiosyncratic callback format with a standard node-style callback",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "main": "request-shim-for-callbacks.js",
   "scripts": {
