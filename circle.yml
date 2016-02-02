@@ -1,0 +1,11 @@
+general:
+  branches:
+    ignore:
+      - /zz.*/  # Don't run tests on deprecated branches.
+machine:
+  node:
+    version: 0.12.0  # Keep in sync with .nvmrc.
+test:
+  override:  # Report lint and unit tests failures separately.
+    - npm run lint
+    - npm run unittest
