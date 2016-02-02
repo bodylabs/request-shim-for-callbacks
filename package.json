@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "jscs --config node_modules/bodylabs-jscs/jscsrc-shared *.js",
     "unittest": "mocha *.spec.js",
-    "test": "npm run unittest && npm run lint"
+    "test": "npm run lint && npm run unittest"
   },
   "repository": {
     "type": "git",
