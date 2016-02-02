@@ -1,0 +1,29 @@
+{
+  "name": "request-shim-for-callbacks",
+  "description": "Wrap request's idiosyncratic callback format with a standard node-style callback",
+  "version": "1.0.0",
+  "private": true,
+  "main": "request-shim-for-callbacks.js",
+  "scripts": {
+    "lint": "jscs --config node_modules/bodylabs-jscs/jscsrc-shared *.js",
+    "unittest": "mocha *.spec.js",
+    "test": "npm run lint && npm run unittest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bodylabs/request-shim-for-callbacks.git"
+  },
+  "dependencies": {
+    "underscore": "~1.8.0"
+  },
+  "peerDependencies": {
+    "request": "*"
+  },
+  "devDependencies": {
+    "bodylabs-jscs": "git+ssh://git@github.com/bodylabs/bodylabs-jscs#1.0.1",
+    "jscs": "~2.1.1",
+    "mocha": "^2.4.5",
+    "request": "*",
+    "should": "^8.2.1"
+  }
+}
