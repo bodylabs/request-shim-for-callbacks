@@ -11,7 +11,7 @@ Usage
 
 ```
 var request = require('request'),
-    verifyResponseStatus = require('./request-shim-for-callbacks');
+    verifyResponseStatus = require('request-shim-for-callbacks');
 
 request.get(
     {
