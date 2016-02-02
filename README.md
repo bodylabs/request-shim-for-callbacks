@@ -9,7 +9,7 @@ Consider any status code not matching the expected status an error.
 Usage
 -----
 
-```
+```js
 var request = require('request'),
     verifyResponseStatus = require('request-shim-for-callbacks');
 

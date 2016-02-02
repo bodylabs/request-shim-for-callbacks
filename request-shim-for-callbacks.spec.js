@@ -26,7 +26,7 @@ describe('verifyResponseStatus', function () {
             });
         });
 
-        context('containing an error without a `message` property', function () {
+        context('with an unexpected status, and no `message` property', function () {
             var errorObject = { foo: 'bar' };
 
             it('should return the entire body as the error', function (done) {
@@ -44,7 +44,7 @@ describe('verifyResponseStatus', function () {
             });
         });
 
-        context('containing an error with a `message` property', function () {
+        context('with an unexpected status, and a `message` property', function () {
             var errorObject = { message: 'This is the message' };
 
             it('should return the message as the error', function (done) {
