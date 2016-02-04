@@ -2,8 +2,8 @@
   "name": "request-shim-for-callbacks",
   "description": "Wrap request's idiosyncratic callback format with a standard node-style callback",
   "version": "1.0.0",
-  "main": "request-shim-for-callbacks.js",
   "license" : "BSD-2-Clause",
+  "main": "request-shim-for-callbacks.js",
   "scripts": {
     "lint": "jscs --config node_modules/bodylabs-jscs/jscsrc-shared *.js",
     "unittest": "mocha *.spec.js",
