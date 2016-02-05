@@ -6,6 +6,7 @@ callback.
 
 Consider any status code not matching the expected status an error.
 
+
 Usage
 -----
 
@@ -30,3 +31,18 @@ request.get(
 );
 
 ```
+
+
+Contribute
+----------
+
+- Issue Tracker: github.com/bodylabs/request-shim-for-callback/issues
+- Source Code: github.com/bodylabs/request-shim-for-callbacks
+
+Pull requests welcome!
+
+
+License
+-------
+
+The project is licensed under the two-clause BSD license.
