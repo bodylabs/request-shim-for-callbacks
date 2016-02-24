@@ -25,7 +25,8 @@
 // WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-var _ = require('underscore');
+var _ = require('underscore'),
+    util = require('util');
 
 // Wrap `request`'s idiosyncratic callback format with a standard Node-style
 // callback. Consider any status code not matching the expected status an
@@ -39,9 +40,14 @@ var verifyResponseStatus = module.exports = function (expectedStatusCode, callba
         if (error) {
             callback(error, null);
         } else if (response.statusCode != expectedStatusCode) {
-            // When `body` is a string or undefined, `_.has` will return
-            // `false`.
-            var message = _(body).has('message') ? body.message : body;
+
+
+            var message =
+                util.format('%d%s%s',
+                            response.statusCode,
+                            (response.statusMessage || '') + ' ',
+                            _(body).has('message') ? body.message : body || ''
+                           ).trim();
 
             callback(Error(message), null);
         } else {

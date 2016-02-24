@@ -54,36 +54,36 @@ describe('verifyResponseStatus', function () {
         });
 
         context('with an unexpected status, and no `message` property', function () {
-            var errorObject = { foo: 'bar' };
+            var errorBody = JSON.stringify({ foo: 'bar' });
 
             it('should return the entire body as the error', function (done) {
                 var callback = verifyResponseStatus(200, function (err, response) {
-                    err.toString().should.equal('Error: ' + errorObject.toString());
+                    err.toString().should.equal('Error: 400 ' + errorBody);
 
                     done();
                 });
 
                 var error = null,
                     response = { statusCode: 400 },
-                    body = errorObject;
+                    body = errorBody;
 
                 callback(error, response, body);
             });
         });
 
         context('with an unexpected status, and a `message` property', function () {
-            var errorObject = { message: 'This is the message' };
+            var errorBody = { message: 'This is the message' };
 
             it('should return the message as the error', function (done) {
                 var callback = verifyResponseStatus(200, function (err, response) {
-                    err.toString().should.equal('Error: ' + errorObject.message);
+                    err.toString().should.equal('Error: 400 ' + errorBody.message);
 
                     done();
                 });
 
                 var error = null,
                     response = { statusCode: 400 },
-                    body = errorObject;
+                    body = errorBody;
 
                 callback(error, response, body);
             });
@@ -96,7 +96,7 @@ describe('verifyResponseStatus', function () {
 
         it('should return the document as the error', function (done) {
             var callback = verifyResponseStatus(200, function (err, response) {
-                err.toString().should.equal('Error: ' + html);
+                err.toString().should.equal('Error: 500 ' + html);
 
                 done();
             });
