@@ -46,6 +46,8 @@ var verifyResponseStatus = module.exports = function (expectedStatusCode, callba
                 util.format('%d%s%s',
                             response.statusCode,
                             (response.statusMessage || '') + ' ',
+
+                            // Use the `abody`'s message if is exists
                             _(body).has('message') ? body.message : body || ''
                            ).trim();
 
