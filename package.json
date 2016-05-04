@@ -5,7 +5,9 @@
   "license" : "BSD-2-Clause",
   "main": "request-shim-for-callbacks.js",
   "scripts": {
-    "lint": "jscs --config node_modules/bodylabs-jscs/jscsrc-shared *.js",
+    "jscs": "jscs --config node_modules/bodylabs-javascript-style/jscs/jscsrc-shared *.js",
+    "eslint": "eslint --config node_modules/bodylabs-javascript-style/eslint/eslintrc-shared.yml '**/*.js'",
+    "lint": "npm run jscs && npm run eslint",
     "unittest": "mocha *.spec.js",
     "test": "npm run lint && npm run unittest"
   },
@@ -20,10 +22,11 @@
     "request": "*"
   },
   "devDependencies": {
-    "bodylabs-jscs": "git+ssh://git@github.com/bodylabs/bodylabs-jscs#1.0.1",
-    "jscs": "~2.1.1",
+    "bodylabs-javascript-style": "^5.0.0",
+    "eslint": "^2.4.0",
+    "jscs": "^2.8.0",
     "mocha": "^2.4.5",
     "request": "*",
-    "should": "^8.2.1"
+    "should": "^8.3.1"
   }
 }

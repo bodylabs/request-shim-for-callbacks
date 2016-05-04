@@ -35,11 +35,11 @@ var _ = require('underscore'),
 // Copy-paste from `bodylabs-api-client`, but should be replaced with a
 // promise-based interface when we switch to promises.
 //
-var verifyResponseStatus = module.exports = function (expectedStatusCode, callback) {
+var verifyResponseStatus = function (expectedStatusCode, callback) {
     return function (error, response, body) {
         if (error) {
             callback(error, null);
-        } else if (response.statusCode != expectedStatusCode) {
+        } else if (response.statusCode !== expectedStatusCode) {
 
 
             var message =
@@ -57,3 +57,5 @@ var verifyResponseStatus = module.exports = function (expectedStatusCode, callba
         }
     };
 };
+
+module.exports = verifyResponseStatus;

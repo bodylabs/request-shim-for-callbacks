@@ -115,7 +115,7 @@ describe('verifyResponseStatus', function () {
 
         it('should return an error', function (done) {
             var callback = verifyResponseStatus(200, function (err, response) {
-                err.should.be.ok;
+                err.should.be.ok();
 
                 done();
             });
