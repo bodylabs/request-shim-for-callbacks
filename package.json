@@ -16,7 +16,7 @@
     "url": "git@github.com:bodylabs/request-shim-for-callbacks.git"
   },
   "dependencies": {
-    "underscore": "~1.8.0"
+    "underscore": "~1.9.2"
   },
   "peerDependencies": {
     "request": "*"
